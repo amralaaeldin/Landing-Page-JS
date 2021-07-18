@@ -1,17 +1,20 @@
 // header sticky on clicking
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
+const icon = document.querySelector("#icon");
 window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
 // open clicking icon
 document.querySelector(".icon").onclick = function () {
   nav.classList.toggle("active");
+  icon.classList.toggle("active");
 };
 // close clicking outside
 document.onclick = function (e) {
   if (e.target.id !== "icon" && e.target.id !== "box") {
     nav.classList.remove("active");
+    icon.classList.remove("active");
   }
 };
 // switching imgs on clicking

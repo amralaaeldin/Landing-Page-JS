@@ -136,7 +136,7 @@ header .container nav {
   display: flex;
   justify-content: space-between;
 }
-header .container nav .icon {
+header .container .icon {
   display: none;
   width: 50px;
   height: 30px;
@@ -146,9 +146,11 @@ header .container nav .icon {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
   cursor: pointer;
+  position: absolute;
+  right: 15px;
 }
 
-header .container nav .icon span {
+header .container .icon span {
   width: 100%;
   display: block;
   height: 4px;
@@ -159,7 +161,7 @@ header .container nav .icon span {
   -ms-border-radius: 20%;
   -o-border-radius: 20%;
 }
-header .container nav .icon span:nth-of-type(2) {
+header .container .icon span:nth-of-type(2) {
   width: 60%;
   align-self: flex-end;
 }
@@ -190,10 +192,7 @@ header.sticky .container .logo {
 }
 
 @media (max-width: 767px) {
-  header .container nav ul {
-    display: none;
-  }
-  header .container nav .icon {
+  header .container .icon {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -205,11 +204,13 @@ header.sticky .container .logo {
   header .container .logo {
     font-size: 30px;
   }
-  header .container nav .icon {
+
+  header .container .icon {
     width: 40px;
     height: 25px;
   }
   /* active nav on click */
+
   header .container nav ul {
     display: flex;
     flex-direction: column;
@@ -228,6 +229,7 @@ header.sticky .container .logo {
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
   }
+
   header .container nav.active ul {
     top: 0;
     right: 0;
@@ -241,44 +243,46 @@ header.sticky .container .logo {
   header .container nav.active ul li a {
     font-size: 1.5em;
   }
+
+  header .container .icon.active {
+    z-index: 1501;
+    position: absolute;
+    right: 45px;
+  }
+  header .container .icon.active span {
+    position: absolute;
+    top: 50%;
+    background-color: var(--clr10);
+  }
+  header .container .icon.active span:nth-of-type(2) {
+    display: none;
+  }
+  header .container .icon.active span:nth-of-type(1) {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transition: 0.4s 0.3s;
+    -webkit-transition: 0.4s 0.3s;
+    -moz-transition: 0.4s 0.3s;
+    -ms-transition: 0.4s 0.3s;
+    -o-transition: 0.4s 0.3s;
+  }
+  header .container .icon.active span:nth-of-type(3) {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transition: 0.4s 0.3s;
+    -webkit-transition: 0.4s 0.3s;
+    -moz-transition: 0.4s 0.3s;
+    -ms-transition: 0.4s 0.3s;
+    -o-transition: 0.4s 0.3s;
+  }
 }
-header .container nav.active .icon {
-  z-index: 1501;
-  position: absolute;
-  right: 58%;
-}
-header .container nav.active .icon span {
-  position: absolute;
-  top: 50%;
-  background-color: var(--clr10);
-}
-header .container nav.active .icon span:nth-of-type(2) {
-  display: none;
-}
-header .container nav.active .icon span:nth-of-type(1) {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transition: 0.4s 0.3s;
-  -webkit-transition: 0.4s 0.3s;
-  -moz-transition: 0.4s 0.3s;
-  -ms-transition: 0.4s 0.3s;
-  -o-transition: 0.4s 0.3s;
-}
-header .container nav.active .icon span:nth-of-type(3) {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transition: 0.4s 0.3s;
-  -webkit-transition: 0.4s 0.3s;
-  -moz-transition: 0.4s 0.3s;
-  -ms-transition: 0.4s 0.3s;
-  -o-transition: 0.4s 0.3s;
-}
+
 /* end header */
 /* start landing */
 .landing {
@@ -288,10 +292,11 @@ header .container nav.active .icon span:nth-of-type(3) {
   width: 100%;
   min-height: 100vh;
   max-width: 100%;
-  background-size: cover;
-  background: fixed 100%;
-  /* background-repeat: no-repeat; */
   background-image: url(../imgs/bg.jpg);
+  /* background-size: 100% 100%; */
+  background-size: cover;
+  background-attachment: fixed;
+  /* background-repeat: no-repeat; */
   transition: background-image 0.4s;
   -webkit-transition: background-image 0.4s;
   -moz-transition: background-image 0.4s;
@@ -311,7 +316,7 @@ header .container nav.active .icon span:nth-of-type(3) {
 
 .landing .content {
   width: 60%;
-  height: fit-content;
+  height: 55%;
   position: absolute;
   top: 20%;
   left: 0;
@@ -319,7 +324,10 @@ header .container nav.active .icon span:nth-of-type(3) {
   display: flex;
   flex-direction: column;
   padding: 60px 15px 50px 100px;
+  height: fit-content;
+  /* justify-content: space-between ; */
   /* display: none; */
+  /* max-height: 60%; */
 }
 
 .landing .content h1 {
@@ -347,8 +355,10 @@ header .container nav.active .icon span:nth-of-type(3) {
   line-height: 1.5em;
   letter-spacing: 0.05px;
   color: var(--clr7);
+  max-width: 700px;
 }
 .landing .content .btn {
+  position: relative;
   width: 200px;
   height: 70px;
   display: flex;
@@ -382,6 +392,13 @@ header .container nav.active .icon span:nth-of-type(3) {
   .landing .content {
     width: 100%;
     padding: 40px 15px 40px 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing .content {
+    width: 100%;
+    padding: 40px 15px 40px 20px;
   }
 }
 
@@ -590,7 +607,7 @@ header .container nav.active .icon span:nth-of-type(3) {
   flex-direction: column;
   padding: 120px 0;
   align-items: center;
-  padding-bottom: 0;
+  padding-bottom: 20px;
 }
 .services .txt {
   max-width: 80%;
@@ -1062,17 +1079,17 @@ header .container nav.active .icon span:nth-of-type(3) {
     align-items: center;
   }
   .about .container form input {
-    width: calc((100% / 2) - 30px);
+    width: calc(65%);
+  }
+  .about .container form textarea {
+    width: 80%;
   }
 }
 
-.about .container form textarea:focus ,
+.about .container form textarea:focus,
 .about .container form input:focus {
-
-  box-shadow: 1px 1px 6px 1.25px  var(--clr10) ;
-
+  box-shadow: 1px 1px 6px 1.25px var(--clr10);
 }
-
 
 .about .container form .btn {
   width: 100%;
@@ -1278,7 +1295,7 @@ footer .container .contact form i {
 
 @media (max-width: 767px) {
   footer .container .contact form {
-    width: 60%;
+    width: 85%;
   }
 }
 
