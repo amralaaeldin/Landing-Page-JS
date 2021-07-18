@@ -111,3 +111,10 @@ img4.onclick = function () {
 };
 
 // bg.style.backgroundImage = 'url(../imgs/img1.jpg)';
+// reveal loader
+const loader = document.querySelector(".loader");
+window.onload = function () {
+  loader.style.opacity = 0;
+  loader.style.display = "none";
+  loader.style.visibility = "hidden";
+};
