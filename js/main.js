@@ -12,7 +12,13 @@ document.querySelector(".icon").onclick = function () {
 };
 // close clicking outside
 document.onclick = function (e) {
-  if (e.target.id !== "icon" && e.target.id !== "box") {
+  if (
+    e.target.id !== "icon" &&
+    e.target.id !== "box" &&
+    e.target.id !== "span1" &&
+    e.target.id !== "span2" &&
+    e.target.id !== "span3"
+  ) {
     nav.classList.remove("active");
     icon.classList.remove("active");
   }
