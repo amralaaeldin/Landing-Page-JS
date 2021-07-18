@@ -675,7 +675,7 @@ header.sticky .container .logo {
     align-content: center;
   }
   .services .container .items .item {
-    width: calc(55%);
+    width: calc(65%);
     display: inline-block;
   }
   .services .container .items .item:not(:first-of-type) {
@@ -1264,7 +1264,7 @@ footer .container .contact form input[type="email"] {
   border: none;
   display: inline-block;
   color: var(--clr1);
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 400;
   line-height: 1.4em;
   letter-spacing: 0.05px;
