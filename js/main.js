@@ -38,7 +38,7 @@ img1.onclick = function () {
   l = 0;
   console.log(i);
 
-  if (i % 2 !== 0) {
+  if (i % 2 != 0) {
     img1.src = "./imgs/bg.jpg";
     bg.style.backgroundImage = "url(../imgs/img3.jpg)";
   } else {
@@ -57,7 +57,7 @@ img2.onclick = function () {
   l = 0;
   console.log(j);
 
-  if (j % 2 !== 0) {
+  if (j % 2 != 0) {
     img2.src = "./imgs/bg.jpg";
     bg.style.backgroundImage = "url(../imgs/img6.jpg)";
   } else {
@@ -76,7 +76,7 @@ img3.onclick = function () {
   l = 0;
   console.log(k);
 
-  if (k % 2 !== 0) {
+  if (k % 2 != 0) {
     img3.src = "./imgs/bg.jpg";
     bg.style.backgroundImage = "url(../imgs/img5.jpg)";
   } else {
@@ -95,7 +95,7 @@ img4.onclick = function () {
 
   console.log(l);
 
-  if (l % 2 !== 0) {
+  if (l % 2 != 0) {
     img4.src = "./imgs/bg.jpg";
     bg.style.backgroundImage = "url(../imgs/img4.jpg)";
   } else {
