@@ -290,7 +290,7 @@ header.sticky .container .logo {
   /* overflow: hidden; */
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 100%;
   background-image: url(../imgs/bg.jpg);
   /* background-size: 100% 100%; */
@@ -303,7 +303,15 @@ header.sticky .container .logo {
   -ms-transition: background-image 0.4s;
   -o-transition: background-image 0.4s;
   justify-content: flex-end;
+  min-height: 600px;
 }
+
+@media (max-width: 991px) {
+  .landing {
+    height: 75vh;
+  }
+}
+
 .landing .bg-cvr {
   width: 100%;
   height: 100%;
@@ -316,18 +324,31 @@ header.sticky .container .logo {
 
 .landing .content {
   width: 60%;
-  height: 55%;
+  /*height: 10%;
+  */
   position: absolute;
-  top: 20%;
+  top: calc(50% + 50px);
+  transform: translateY(-50%);
   left: 0;
   background-color: rgb(34, 89, 151, 0.6);
   display: flex;
   flex-direction: column;
   padding: 60px 15px 50px 100px;
   height: fit-content;
-  /* justify-content: space-between ; */
-  /* display: none; */
-  /* max-height: 60%; */
+  /*justify-content: space-between ;
+  */ /*display: none;
+  */ /*max-height: 60%;
+  */
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+@media (max-height: 600px) {
+  .landing .content {
+    top: calc(50%);
+  }
 }
 
 .landing .content h1 {
@@ -335,7 +356,7 @@ header.sticky .container .logo {
   font-family: "Otomanopee One", sans-serif;
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   font-size: 2.3em;
   font-weight: 400;
   letter-spacing: 0.05px;
@@ -349,7 +370,7 @@ header.sticky .container .logo {
 }
 
 .landing .content .txt {
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5em;
