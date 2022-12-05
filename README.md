@@ -2,4 +2,4 @@
 HTML-CSS-JS-Training-Template-two
 
 ## to explore it 
-- go to (https://amralaaeledin.github.io/Training-Template-two/).
+- go to (https://amralaaeldin.github.io/Training-Template-two/).
