@@ -24,6 +24,9 @@ document.onclick = function (e) {
   }
 };
 // switching imgs on clicking
+const bgImgs = [...document.querySelectorAll(".sub-content div img")];
+
+const subContent = document.querySelector(".sub-content");
 const img1 = document.querySelector(".img1");
 const img2 = document.querySelector(".img2");
 const img3 = document.querySelector(".img3");
@@ -34,81 +37,15 @@ let j = 0;
 let k = 0;
 let l = 0;
 
-img1.onclick = function () {
-  img2.src = "./imgs/img6.jpg";
-  img3.src = "./imgs/img5.jpg";
-  img4.src = "./imgs/img4.jpg";
-  i++;
-  j = 0;
-  k = 0;
-  l = 0;
-  console.log(i);
-
-  if (i % 2 != 0) {
-    img1.src = "./imgs/bg.jpg";
-    bg.style.backgroundImage = "url(./imgs/img3.jpg)";
-  } else {
-    img1.src = "./imgs/img3.jpg";
-    bg.style.backgroundImage = "url(./imgs/bg.jpg)";
+subContent.addEventListener('click', (e) => {
+  if (e.target.nodeName.toLowerCase() == 'img') {
+    const start = bg.style.backgroundImage.lastIndexOf('img')
+    const end = bg.style.backgroundImage.indexOf('jpg') + 3
+    const oldOne = bg.style.backgroundImage.slice(start, end) || 'bg.jpg'
+    bg.style.backgroundImage = `url(${e.target.src})`;
+    e.target.src = oldOne.indexOf('imgs') === -1 ? `imgs/${oldOne}` : oldOne
   }
-};
-
-img2.onclick = function () {
-  img1.src = "./imgs/img3.jpg";
-  img3.src = "./imgs/img5.jpg";
-  img4.src = "./imgs/img4.jpg";
-  j++;
-  i = 0;
-  k = 0;
-  l = 0;
-  console.log(j);
-
-  if (j % 2 != 0) {
-    img2.src = "./imgs/bg.jpg";
-    bg.style.backgroundImage = "url(./imgs/img6.jpg)";
-  } else {
-    img2.src = "./imgs/img6.jpg";
-    bg.style.backgroundImage = "url(./imgs/bg.jpg)";
-  }
-};
-img3.onclick = function () {
-  img1.src = "./imgs/img3.jpg";
-  img2.src = "./imgs/img6.jpg";
-  img4.src = "./imgs/img4.jpg";
-
-  k++;
-  i = 0;
-  j = 0;
-  l = 0;
-  console.log(k);
-
-  if (k % 2 != 0) {
-    img3.src = "./imgs/bg.jpg";
-    bg.style.backgroundImage = "url(./imgs/img5.jpg)";
-  } else {
-    img3.src = "./imgs/img5.jpg";
-    bg.style.backgroundImage = "url(./imgs/bg.jpg)";
-  }
-};
-img4.onclick = function () {
-  img1.src = "./imgs/img3.jpg";
-  img2.src = "./imgs/img6.jpg";
-  img3.src = "./imgs/img5.jpg";
-  l++;
-  i = 0;
-  j = 0;
-  k = 0;
-
-  console.log(l);
-
-  if (l % 2 != 0) {
-    img4.src = "./imgs/bg.jpg";
-    bg.style.backgroundImage = "url(./imgs/img4.jpg)";
-  } else {
-    img4.src = "./imgs/img4.jpg";
-    bg.style.backgroundImage = "url(./imgs/bg.jpg)";
-  }
-};
+})
 
 // reveal loader
 const loader = document.querySelector(".loader");
