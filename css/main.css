@@ -467,7 +467,7 @@ header.sticky .container .logo {
 }
 
 .landing .sub-content div {
-  width: 150px;
+  max-width: 110px;
   height: 200px;
   border-radius: 110px;
   -webkit-border-radius: 110px;
