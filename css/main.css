@@ -727,6 +727,7 @@ header.sticky .container .logo {
   );
   width: calc((100% / 4) - 20px);
   display: inline-block;
+  max-width: 300px;
 }
 
 @media (max-width: 991px) {
@@ -749,7 +750,7 @@ header.sticky .container .logo {
   }
 
   .services .container .items .item {
-    width: calc(65%);
+    width: 100%;
     display: inline-block;
   }
 
@@ -760,7 +761,8 @@ header.sticky .container .logo {
 
 .services .container .items .item div:first-of-type {
   display: inline-block;
-  height: 150px;
+  height: 210px;
+  width: 100%;
 }
 
 .services .container .items .item .cardtxt {
