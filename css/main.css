@@ -273,7 +273,7 @@ header.sticky .container .logo {
   header .container .icon.active {
     z-index: 1501;
     position: absolute;
-    right: 45px;
+    right: 15px;
   }
 
   header .container .icon.active span {
