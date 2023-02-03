@@ -36,7 +36,7 @@ subContent.addEventListener('click', (e) => {
     const end = bg.style.backgroundImage.indexOf('jpg') + 3
     const oldOne = bg.style.backgroundImage.slice(start, end) || 'bg.jpg'
     bg.style.backgroundImage = `url(${e.target.src})`;
-    e.target.src = oldOne.indexOf('imgs') === -1 ? `/imgs/${oldOne}` : oldOne
+    e.target.src = oldOne.indexOf('imgs') === -1 ? `imgs/${oldOne}` : oldOne
   }
 })
 
