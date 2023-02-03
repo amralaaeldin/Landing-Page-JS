@@ -5,11 +5,13 @@ const icon = document.querySelector("#icon");
 window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
+
 // open clicking icon
 document.querySelector(".icon").onclick = function () {
   nav.classList.toggle("active");
   icon.classList.toggle("active");
 };
+
 // close clicking outside
 document.onclick = function (e) {
   if (
@@ -23,19 +25,9 @@ document.onclick = function (e) {
     icon.classList.remove("active");
   }
 };
-// switching imgs on clicking
-const bgImgs = [...document.querySelectorAll(".sub-content div img")];
 
+// switching imgs on clicking
 const subContent = document.querySelector(".sub-content");
-const img1 = document.querySelector(".img1");
-const img2 = document.querySelector(".img2");
-const img3 = document.querySelector(".img3");
-const img4 = document.querySelector(".img4");
-const bg = document.querySelector(".landing");
-let i = 0;
-let j = 0;
-let k = 0;
-let l = 0;
 
 subContent.addEventListener('click', (e) => {
   if (e.target.nodeName.toLowerCase() == 'img') {
